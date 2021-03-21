@@ -1,0 +1,66 @@
+
+.header__container {
+  display: flex;
+  width: 89vw;
+  margin: auto;
+  min-height: 74px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.header__account-btn {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.header__account-text {
+  font-size: 13px;
+  line-height: 12px;
+  margin: 0px 7px 0px 11px;
+  align-self: center;
+}
+
+.header__account-logo {
+  width: 26px;
+  height: 26px;
+  background-color: #313131;
+  border-radius: 50px;
+  margin-right: 3px;
+  background-image: url('../../images/account-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__nav-ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header__nav-list {
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 18px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.header__nav-list_bold {
+  font-weight: 500;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #FFF;
+
+}
+
+
