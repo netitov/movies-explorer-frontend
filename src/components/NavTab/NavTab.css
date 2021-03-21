@@ -1,0 +1,31 @@
+.navTab__ul {
+  padding: 0;
+  display: flex;
+  margin: auto;
+  width: 308px;
+  margin-bottom: 30px;
+}
+
+.navTab__link {
+  background: #303030;
+  text-decoration: none;
+  width: 96px;
+  height: 36px;
+  margin-right: 10px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navTab__link:last-of-type {
+  margin-right: 0px;
+}
+
+.navTab__list {
+  list-style-type: none;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}

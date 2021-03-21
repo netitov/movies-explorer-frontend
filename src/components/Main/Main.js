@@ -4,6 +4,7 @@ import React from 'react';
 
 //componenents
 import Header from '../Header/Header';
+import Promo from '../Promo/Promo';
 
 function Main() {
 
@@ -12,6 +13,7 @@ function Main() {
   return (
     <main className="main">
       <Header />
+      <Promo />
     </main>
   )
 }
