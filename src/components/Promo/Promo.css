@@ -4,6 +4,8 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  max-width: 1280px;
 }
 
 .promo__heading {
@@ -13,5 +15,6 @@
   text-align: center;
   max-width: 730px;
   margin: 160px auto 151px;
+  letter-spacing: -0.04em;
 
 }
