@@ -52,7 +52,7 @@
 .aboutProject__duration {
   width: 89vw;
   margin: auto;
-  padding-bottom: 101px;
+  max-width: 1280px;
 }
 
 .aboutProject__line {
