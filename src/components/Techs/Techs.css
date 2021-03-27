@@ -1,6 +1,7 @@
 .techs {
   background: #272727;
-  max-width: 1280px;
+ /*  max-width: 1280px; */
+  margin: auto;
 }
 
 .techs__headng {

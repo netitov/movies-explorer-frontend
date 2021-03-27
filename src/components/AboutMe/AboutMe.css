@@ -1,0 +1,55 @@
+.aboutMe {
+
+}
+
+.aboutMe__headng {
+  margin-bottom: 65px;
+}
+
+.aboutMe__section {
+  display: flex;
+  justify-content: space-between;
+  width: 89vw;
+  max-width: 1280px;
+  margin: auto;
+  padding-bottom: 95px;
+}
+
+.aboutMe__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 39vw;
+}
+
+.aboutMe__name {
+  margin: 0;
+  text-align: start;
+}
+
+.aboutMe__occupation {
+  margin: 18px 0 26px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.aboutMe__disciption {
+  margin: 0 0 0px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.aboutMe__contacts {
+  list-style-type: none;
+  margin-top: 56px;
+  padding: 0;
+
+}
+
+.aboutMe__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
