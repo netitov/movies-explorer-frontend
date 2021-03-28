@@ -5,6 +5,7 @@ function AboutMe() {
 
   return (
     <section className="aboutMe">
+      <a name="aboutme"></a>
       <h2 className="aboutMe__headng aboutProject__heading">Студент</h2>
       <div className="aboutMe__section">
         <div className="aboutMe__info">
@@ -15,10 +16,10 @@ function AboutMe() {
           в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами
           и ушёл с постоянной работы.</p>
           <ul className="aboutMe__contacts">
-            <a className="aboutMe__link" href="">
+            <a className="aboutMe__link link" href="https://www.facebook.com/">
               <li className="">Facebook</li>
             </a>
-            <a className="aboutMe__link" href="">
+            <a className="aboutMe__link link" href="https://github.com/T-Nick-13">
               <li className="">Github</li>
             </a>
           </ul>

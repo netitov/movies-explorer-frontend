@@ -54,6 +54,15 @@
   color: #FFF;
 }
 
+.link {
+  transition: opacity .4s linear;
+}
+
+.link:hover {
+  opacity: .4;
+  cursor: pointer;
+}
+
 .header__nav-list_bold {
   font-weight: 500;
 }

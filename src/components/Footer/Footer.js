@@ -8,13 +8,13 @@ function Footer() {
         <nav>
           <ul className="footer__nav">
             <li>
-              <a className="footer__link" href="">Яндекс.Практикум</a>
+              <a className="footer__link link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
             </li>
             <li>
-              <a className="footer__link" href="">Github</a>
+              <a className="footer__link link" href="https://github.com/T-Nick-13">Github</a>
             </li>
             <li>
-              <a className="footer__link" href="">Facebook</a>
+              <a className="footer__link link" href="https://www.facebook.com/">Facebook</a>
             </li>
           </ul>
         </nav>
