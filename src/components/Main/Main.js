@@ -13,7 +13,14 @@ function Main() {
 
   return (
     <main className="main">
-      <Header />
+      <Header
+        headerLink="Регистрация"
+        headerRoute="/signup"
+        headerLink3="Войти"
+        btnClass="header__account-btn_enter"
+        btnSignClass="header__btn"
+        headerRoute3="/signin"
+      />
       <Promo />
       <AboutProject />
       <Techs />

@@ -73,4 +73,22 @@
 
 }
 
+.header__btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  margin: 0;
+}
+
+.header__account-btn_enter {
+  width: 76px;
+  height: 32px;
+  background: #3DDC84;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
