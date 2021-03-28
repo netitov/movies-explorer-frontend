@@ -1,0 +1,40 @@
+.footer {
+  width: 89vw;
+  margin: auto;
+  max-width: 1280px;
+  padding: 79px 0 20px;
+}
+
+.footer__heading {
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #8B8B8B;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #424242;
+  padding-top: 20px;
+}
+
+.footer__copyright {
+  margin: 0;
+}
+
+.footer__nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+}
+

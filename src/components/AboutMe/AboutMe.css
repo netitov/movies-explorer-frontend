@@ -1,16 +1,19 @@
 .aboutMe {
+  width: 75vw;
+  margin: auto;
+  max-width: 961px;
 
 }
 
 .aboutMe__headng {
   margin-bottom: 65px;
+  width: 75vw;
+  max-width: 961px;
 }
 
 .aboutMe__section {
   display: flex;
   justify-content: space-between;
-  width: 89vw;
-  max-width: 1280px;
   margin: auto;
   padding-bottom: 95px;
 }
@@ -42,8 +45,9 @@
 .aboutMe__contacts {
   list-style-type: none;
   margin-top: 56px;
+  margin-bottom: 0;
   padding: 0;
-
+  display: flex;
 }
 
 .aboutMe__link {
@@ -52,4 +56,14 @@
   font-size: 14px;
   line-height: 17px;
   color: #FFFFFF;
+  margin-right: 17px;
+}
+
+.aboutMe__link:last-of-type {
+  margin: 0;
+}
+
+.aboutMe__pic {
+  max-width: 228px;
+  max-height: 325px;
 }
