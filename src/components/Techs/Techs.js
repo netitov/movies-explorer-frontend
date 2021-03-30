@@ -10,25 +10,25 @@ function Techs() {
         которые применили в дипломном проекте.</p>
       <ul className="techs__ul navTab__ul">
         <a className="techs__link navTab__link link" href="https://html.spec.whatwg.org/">
-          <li className="navTab__list">HTML</li>
+          <li className="techs__link-text">HTML</li>
         </a>
         <a className="techs__link navTab__link link" href="https://www.w3.org/Style/CSS/specs.ru.html">
-          <li className="navTab__list">CSS</li>
+          <li className="techs__link-text">CSS</li>
         </a>
         <a className="techs__link navTab__link link" href="https://developer.mozilla.org/ru/docs/Web/JavaScript">
-          <li className="navTab__list">JS</li>
+          <li className="techs__link-text">JS</li>
         </a>
         <a className="techs__link navTab__link link" href="https://ru.reactjs.org/">
-          <li className="navTab__list">React</li>
+          <li className="techs__link-text">React</li>
         </a>
         <a className="techs__link navTab__link link" href="https://git-scm.com/docs">
-          <li className="navTab__list">Git</li>
+          <li className="techs__link-text">Git</li>
         </a>
         <a className="techs__link navTab__link link" href="https://expressjs.com/ru/">
-          <li className="navTab__list">Express.js</li>
+          <li className="techs__link-text">Express.js</li>
         </a>
         <a className="techs__link navTab__link link" href="https://www.mongodb.com/">
-          <li className="navTab__list">mongoDB</li>
+          <li className="techs__link-text">mongoDB</li>
         </a>
       </ul>
     </section>

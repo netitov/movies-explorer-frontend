@@ -2,7 +2,6 @@
   width: 75vw;
   margin: auto;
   max-width: 961px;
-
 }
 
 .aboutMe__headng {
@@ -27,6 +26,10 @@
 .aboutMe__name {
   margin: 0;
   text-align: start;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
 }
 
 .aboutMe__occupation {
@@ -37,7 +40,7 @@
 }
 
 .aboutMe__disciption {
-  margin: 0 0 0px;
+  margin: 0;
   font-size: 14px;
   line-height: 22px;
 }
@@ -67,3 +70,38 @@
   max-width: 228px;
   max-height: 325px;
 }
+
+@media (max-width: 768px) {
+  .aboutMe__occupation {
+    margin: 16px 0 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .aboutMe__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .aboutMe__disciption {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+  .aboutMe__contacts {
+    margin-top: 87px;
+  }
+  .aboutMe__pic {
+    max-width: 225px;
+    max-height: 307px;
+  }
+  .aboutMe__section {
+    padding-bottom: 90px;
+  }
+  .aboutMe {
+    width: 89vw;
+  }
+  .aboutMe__headng {
+    width: 89vw;
+  }
+
+}
+

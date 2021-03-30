@@ -1,11 +1,9 @@
 .techs {
   background: #272727;
- /*  max-width: 1280px; */
   margin: auto;
 }
 
 .techs__headng {
-  padding-top: 100px;
   margin: 0 auto 90px;
 }
 
@@ -26,9 +24,47 @@
 .techs__ul {
   width: 690px;
   padding-bottom: 100px;
+  margin-bottom: 0;
 }
 
 .techs__link {
   width: 90px;
   height: 60px;
 }
+
+.techs__link-text {
+  list-style-type: none;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+
+@media (max-width: 768px) {
+  .header__nav-list {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .techs__headng {
+    margin-bottom: 80px;
+  }
+  .techs__description {
+    margin: 22px auto 83px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .techs__link {
+    width: 84px;
+    height: 57px;
+    margin-bottom: 10px;
+  }
+  .techs__link-text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .techs__ul {
+    padding-bottom: 80px;
+    max-width: 85vw;
+  }
+}
+

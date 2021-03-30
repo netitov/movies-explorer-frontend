@@ -10,18 +10,14 @@ function AboutProject() {
       <a name="aboutProject"></a>
       <h2 className="aboutProject__heading">О проекте</h2>
       <div className="aboutProject__section">
-        <div className="aboutProject__content">
-          <h3 className="aboutProject__caption">Дипломный проект включал 5 этапов</h3>
-          <p className="aboutProject__description">Составление плана, работу над бэкендом, вёрстку,
+        <h3 className="aboutProject__caption">Дипломный проект включал 5 этапов</h3>
+        <h3 className="aboutProject__caption">На выполнение диплома ушло 5 недель</h3>
+        <p className="aboutProject__description">Составление плана, работу над бэкендом, вёрстку,
             добавление функциональности и финальные доработки.
-          </p>
-        </div>
-        <div className="aboutProject__content">
-          <h3 className="aboutProject__caption">На выполнение диплома ушло 5 недель</h3>
-          <p className="aboutProject__description">У каждого этапа был мягкий и жёсткий дедлайн,
-            которые нужно было соблюдать, чтобы успешно защититься.
-          </p>
-        </div>
+        </p>
+        <p className="aboutProject__description">У каждого этапа был мягкий и жёсткий дедлайн,
+          которые нужно было соблюдать, чтобы успешно защититься.
+        </p>
       </div>
       <div className="aboutProject__duration">
         <div className="aboutProject__line">
