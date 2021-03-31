@@ -170,5 +170,11 @@
   .aboutProject__line:last-of-type {
     padding-bottom: 59px;
   }
+  .aboutProject__line_size_s {
+    width: 35%;
+  }
+  .aboutProject__line_size_l {
+    width: 65%;
+  }
 }
 
