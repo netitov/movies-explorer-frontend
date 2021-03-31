@@ -68,3 +68,37 @@
   }
 }
 
+@media (max-width: 480px) {
+  .techs__headng::after {
+    border-bottom: 1px solid #000;
+    display: block;
+    content: " ";
+  }
+  .techs__headng {
+    margin-bottom: 60px;
+  }
+  .techs__description {
+    font-size: 11px;
+    line-height: 16px;
+    width: 91vw;
+    margin: 24px auto 50px;
+  }
+  .techs__ul {
+    max-width: 57vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 84px));
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    padding-bottom: 70px;
+  }
+  .techs__link {
+    width: 84px;
+    height: 57px;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+  .techs {
+    background: #202020;
+  }
+}
+

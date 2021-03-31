@@ -43,13 +43,13 @@
   padding: 0;
   margin: 0;
   display: flex;
+  margin-right: 30px;
 }
 
 .header__nav-list {
   list-style-type: none;
   font-size: 14px;
   line-height: 18px;
-  margin-right: 20px;
   text-decoration: none;
   color: #FFF;
 }
@@ -91,11 +91,25 @@
   justify-content: center;
 }
 
-
 @media (max-width: 768px) {
   .header__nav-list {
     font-size: 12px;
     line-height: 16px;
+  }
+  .header__nav-ul {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__nav-list {
+    font-size: 10px;
+  }
+  .header__btn {
+    font-size: 10px;
+  }
+  .header__container {
+    width: 91vw;
   }
 }
 

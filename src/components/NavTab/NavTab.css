@@ -31,3 +31,18 @@
   font-size: 12px;
   line-height: 16px;
 }
+
+@media (max-width: 480px) {
+  .navTab__link {
+    width: 82px;
+    height: 26px;
+    margin-right: 6px;
+  }
+  .navTab__ul {
+    width: 260px;
+    margin-bottom: 17px;
+  }
+  .navTab__list {
+    font-size: 10px;
+  }
+}

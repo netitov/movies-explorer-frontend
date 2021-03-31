@@ -7,13 +7,13 @@ function Footer() {
         <p className="footer__copyright">&copy;2021</p>
         <nav>
           <ul className="footer__nav">
-            <li>
+            <li className="footer__list">
               <a className="footer__link link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
             </li>
-            <li>
+            <li className="footer__list">
               <a className="footer__link link" href="https://github.com/T-Nick-13">Github</a>
             </li>
-            <li>
+            <li className="footer__list">
               <a className="footer__link link" href="https://www.facebook.com/">Facebook</a>
             </li>
           </ul>

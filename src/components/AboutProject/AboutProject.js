@@ -12,7 +12,7 @@ function AboutProject() {
       <div className="aboutProject__section">
         <h3 className="aboutProject__caption">Дипломный проект включал 5 этапов</h3>
         <h3 className="aboutProject__caption">На выполнение диплома ушло 5 недель</h3>
-        <p className="aboutProject__description">Составление плана, работу над бэкендом, вёрстку,
+        <p className="aboutProject__description aboutProject__description_possiton_2">Составление плана, работу над бэкендом, вёрстку,
             добавление функциональности и финальные доработки.
         </p>
         <p className="aboutProject__description">У каждого этапа был мягкий и жёсткий дедлайн,

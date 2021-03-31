@@ -102,6 +102,48 @@
   .aboutMe__headng {
     width: 89vw;
   }
+}
 
+@media (max-width: 480px) {
+  .aboutMe__section {
+    display: grid;
+    padding-bottom: 69px;
+  }
+  .aboutMe__headng {
+    width: 91vw;
+    margin-bottom: 60px;
+  }
+  .aboutMe__pic {
+    grid-row: 1;
+    max-width: 292px;
+    justify-self: center;
+    width: 91vw;
+    margin-bottom: 40px;
+    max-height: fit-content;
+  }
+  .aboutMe {
+    width: 91vw;
+  }
+  .aboutMe__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 91vw;
+  }
+  .aboutMe__name {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .aboutMe__occupation {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .aboutMe__disciption {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .aboutMe__contacts {
+    margin-top: 40px;
+  }
 }
 
