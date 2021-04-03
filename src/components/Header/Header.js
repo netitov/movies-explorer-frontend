@@ -12,10 +12,10 @@ function Header(props) {
         <div className="header__nav-container">
           <nav className="header__nav">
             <ul className="header__nav-ul">
-              <Link className="header__nav-list header__nav-list_bold link" to={props.headerRoute}>
+              <Link className={`header__nav-list header__nav-list_bold  link ${props.isPadding}`} to={props.headerRoute}>
                 <li>{props.headerLink}</li>
               </Link>
-              <Link className="header__nav-list link" to={props.headerRoute2}>
+              <Link className={`header__nav-list link ${props.isVisible} ${props.isPadding}`}  to={props.headerRoute2}>
                 <li>{props.headerLink2}</li>
               </Link>
             </ul>

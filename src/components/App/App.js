@@ -5,6 +5,7 @@ import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 //components
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
+import Movies from '../Movies/Movies';
 
 
 function App() {
@@ -15,11 +16,14 @@ function App() {
 
     <div className="page">
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Main />
-          <Footer />
+        </Route>
+        <Route path="/movies">
+          <Movies />
         </Route>
       </Switch>
+      <Footer />
     </div>
 
 

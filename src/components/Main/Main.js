@@ -20,6 +20,7 @@ function Main() {
         btnClass="header__account-btn_enter"
         btnSignClass="header__btn"
         headerRoute3="/signin"
+        isVisible="header__nav-list_visible_off"
       />
       <Promo />
       <AboutProject />
