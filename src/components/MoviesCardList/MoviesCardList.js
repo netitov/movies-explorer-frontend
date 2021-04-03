@@ -7,6 +7,7 @@ function MoviesCardList() {
       <ul className="moviesCardList">
         <MoviesCard />
       </ul>
+      <button className="moviesCardList__btn link">Ещё</button>
 
     </main>
   )
