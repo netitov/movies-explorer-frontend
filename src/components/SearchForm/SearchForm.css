@@ -28,7 +28,7 @@
 }
 
 .serachForm__btn {
-  width: 70px;
+  min-width: 70px;
   height: 44px;
   border-radius: 50px;
   background-color: #4285F4;
@@ -80,8 +80,8 @@
   width: 16px;
   left: 1px;
   bottom: 1px;
-  background-color: #2BE080;
-  border: 1px solid #FFFFFF;
+  background-color: #FFF;
+  border: 1px solid #FFF;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -98,6 +98,9 @@ input:checked + .slider:before {
   -webkit-transform: translateX(17px);
   -ms-transform: translateX(17px);
   transform: translateX(17px);
+  background-color: #2BE080;
+  border: 1px solid #FFF;
+
 }
 .slider.round {
   border-radius: 34px;

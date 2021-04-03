@@ -1,5 +1,6 @@
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function Movies() {
 
@@ -18,6 +19,7 @@ function Movies() {
         isPadding="header__nav-list_padding_on"
       />
       <SearchForm />
+      <MoviesCardList />
     </div>
   )
 }

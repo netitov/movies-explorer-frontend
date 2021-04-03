@@ -1,12 +1,10 @@
-
-
 function SearchForm() {
 
   return (
     <section className="serachForm">
       <form className="serachForm__form">
         <input className="serachForm__input" type="text" placeholder="Фильмы"></input>
-        <button className="serachForm__btn">Найти</button>
+        <button className="serachForm__btn link">Найти</button>
       </form>
 
       <div className="serachForm__filter">
