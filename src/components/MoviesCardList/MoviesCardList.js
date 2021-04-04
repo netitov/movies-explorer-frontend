@@ -8,7 +8,6 @@ function MoviesCardList() {
         <MoviesCard />
       </ul>
       <button className="moviesCardList__btn link">Ещё</button>
-
     </main>
   )
 }

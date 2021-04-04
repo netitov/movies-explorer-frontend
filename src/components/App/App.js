@@ -7,6 +7,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 
 function App() {
@@ -21,8 +22,11 @@ function App() {
         <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/movies">
+        <Route exact path="/movies">
           <Movies />
+        </Route>
+        <Route exact path="/saved-movies">
+          <SavedMovies />
         </Route>
       </Switch>
       <Footer />
