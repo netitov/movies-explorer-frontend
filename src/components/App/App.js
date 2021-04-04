@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import SavedMovies from '../SavedMovies/SavedMovies';
+import Register from '../Register/Register';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/saved-movies">
           <SavedMovies />
+        </Route>
+        <Route exact path="/signup">
+          <Register />
         </Route>
       </Switch>
       <Footer />

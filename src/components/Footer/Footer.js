@@ -1,6 +1,9 @@
+import { Link, Route } from 'react-router-dom';
+
 function Footer() {
 
   return (
+    <Route exact path={['/saved-movies', '/movies', '/profile', '/']}>
     <footer className="footer">
       <h3 className="footer__heading">Учебный проект Яндекс.Практикум х BeatFilm.</h3>
       <div className="footer__container">
@@ -20,6 +23,7 @@ function Footer() {
         </nav>
       </div>
     </footer>
+    </Route>
   )
 }
 

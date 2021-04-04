@@ -29,7 +29,7 @@ function Header() {
       </header>
     </Route>
 
-    <Route path={['/saved-movies', '/movies', '/profile']}>
+    <Route exact path={['/saved-movies', '/movies', '/profile']}>
       <header className="header">
         <div className="header__container">
           <Link to="/">
