@@ -65,11 +65,31 @@
   .moviesCard__btn {
     top: 14px;
     left: 253px;
-
   }
 
   .moviesCard__img {
     width: 339px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moviesCardList {
+    grid-row-gap: 39px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
+  .moviesCard__btn {
+    top: 10px;
+    left: 218px;
+  }
+  .moviesCard__img {
+    width: 300px;
+  }
+  .moviesCard__container {
+    max-width: 300px;
+  }
+  .moviesCard__name {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 

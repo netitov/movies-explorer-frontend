@@ -221,11 +221,9 @@
     transition-duration: .25s;
   }
 
-
   .header__account-btn_menu {
     margin: auto;
     padding-bottom: 90px;
-
   }
 
 }
@@ -239,6 +237,30 @@
   }
   .header__container {
     width: 91vw;
+  }
+  .menu__btn {
+    width: 22px;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    width: 22px;
+  }
+  .menu__box {
+    width: 100%;
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+  .menu__item {
+    padding-bottom: 24px;
+  }
+  .menu__item:first-of-type {
+    padding-top: 144px;
+  }
+  .header__account-btn_menu {
+    padding-bottom: 46px;
   }
 }
 
