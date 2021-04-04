@@ -9,6 +9,7 @@ import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
+import Login from '../Login/Login';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path="/signup">
           <Register />
+        </Route>
+        <Route exact path="/signin">
+          <Login />
         </Route>
       </Switch>
       <Footer />
