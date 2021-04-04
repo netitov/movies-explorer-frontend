@@ -85,3 +85,32 @@
     height: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .auth {
+    padding: 56px 0 30px;
+    height: auto;
+    width: 82vw;
+  }
+  .auth__heading {
+    margin: 50px 0 80px;
+  }
+  .auth__logo {
+    align-self: center;
+  }
+  .auth__heading {
+    text-align: center;
+  }
+  .auth__btn {
+    margin-top: 216px;
+    height: 45px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    background-color: #4285F4;
+    transition: opacity 0.5s linear;
+    color: #FFF;
+  }
+}
