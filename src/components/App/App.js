@@ -6,6 +6,7 @@ import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
+import Header from '../Header/Header';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
 
     <div className="page">
+      <Header />
       <Switch>
         <Route exact path="/">
           <Main />

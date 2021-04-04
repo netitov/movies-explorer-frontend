@@ -1,6 +1,5 @@
 .moviesCard {
   list-style-type: none;
-  max-width: 360px;
   position: relative;
 }
 
@@ -50,9 +49,27 @@
   border: none;
   color: #FFF;
   transition: opacity 0.3s linear;
+  padding: 0;
 }
 
 .link-btn:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .moviesCardList {
+    grid-row-gap: 47px;
+    grid-template-columns: repeat(auto-fit, minmax(339px, 339px));
+  }
+  .moviesCard__btn {
+    top: 14px;
+    left: 253px;
+
+  }
+
+  .moviesCard__img {
+    width: 339px;
+  }
+}
+
