@@ -10,6 +10,7 @@ import Header from '../Header/Header';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import Profile from '../Profile/Profile';
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
         </Route>
         <Route exact path="/signin">
           <Login />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Switch>
       <Footer />

@@ -113,4 +113,10 @@
     transition: opacity 0.5s linear;
     color: #FFF;
   }
+  .auth__text {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 14px;
+  }
+
 }
