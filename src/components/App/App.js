@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 //components
 import Main from '../Main/Main';
@@ -11,11 +11,10 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
+import NotFound from '../NotFound/NotFound';
 
 
 function App() {
-
-
 
   return (
 
@@ -39,6 +38,9 @@ function App() {
         </Route>
         <Route exact path="/profile">
           <Profile />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
       <Footer />
