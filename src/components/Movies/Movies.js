@@ -10,10 +10,14 @@ function Movies(props) {
         handleChangeSwitcher={props.handleChangeSwitcher}
         shortMovie={props.shortMovie}
         setPreload={props.setPreload}
+        showNoResult={props.showNoResult}
         />
       <MoviesCardList
         movies={props.movies}
-        inSearch={props.inSearch}  />
+        inSearch={props.inSearch}
+        foundMovies={props.foundMovies}
+        noResult={props.noResult}
+        />
     </div>
   )
 }

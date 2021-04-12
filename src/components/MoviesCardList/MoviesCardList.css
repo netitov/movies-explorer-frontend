@@ -27,6 +27,16 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.moviesCardList__noResult {
+  width: 89vw;
+  text-align: center;
+  margin: 35px auto 180px;
+}
+
+.moviesCardList__btn_visible_hidden {
+  visibility: hidden;
+}
+
 @media (max-width: 845px) {
   .moviesCardList {
     width: 92vw;

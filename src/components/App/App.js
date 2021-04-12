@@ -21,8 +21,10 @@ import { SHORT_MOVIE_DRT } from '../../utils/config'
 function App() {
 
   const [movies, setMovies] = React.useState([]);
+  const [foundMovies, setFoundMovies] = React.useState([]);
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
+  const [noResult, setNoResult] = React.useState(false);
 
 
   React.useEffect(() => {
@@ -30,7 +32,8 @@ function App() {
       moviesApi.getInitialMovies()
     ])
     .then(([movies]) => {
-      setMovies(movies)
+      localStorage.setItem("movies", JSON.stringify(movies));
+      setMovies(JSON.parse(localStorage.getItem("movies")));
     })
     .catch((err) => {
       console.log(err);
@@ -46,13 +49,13 @@ function App() {
           movie.nameRU.toLowerCase().includes(movieName.toLowerCase())
           )
       });
-      setMovies(fountShortMovies)
+      setFoundMovies(fountShortMovies)
     }
     else {
       const foundMovies = movies.filter((movie) => {
         return movie.nameRU.toLowerCase().includes(movieName.toLowerCase());
       });
-      return setMovies(foundMovies)
+      return setFoundMovies(foundMovies)
     }
   }
 
@@ -60,12 +63,18 @@ function App() {
     setShortMovie(!shortMovie);
   }
 
-  function setPreload () {
+  function setPreload() {
     setInSearch(true);
     setTimeout(() => {
       setInSearch(false);
     }, 1000);
   }
+
+  function showNoResult() {
+    setNoResult(true);
+  }
+
+
 
 
   return (
@@ -83,7 +92,10 @@ function App() {
             handleChangeSwitcher={handleChangeSwitcher}
             shortMovie={shortMovie}
             inSearch={inSearch}
-            setPreload={setPreload} />
+            setPreload={setPreload}
+            foundMovies={foundMovies}
+            noResult={noResult}
+            showNoResult={showNoResult} />
         </Route>
         <Route exact path="/saved-movies">
           <SavedMovies />

@@ -12,9 +12,8 @@ function SearchForm(props) {
     e.preventDefault();
     props.setPreload();
     props.searchMovie(movieName);
+    props.showNoResult();
   }
-
-
 
 
   return (
@@ -39,7 +38,6 @@ function SearchForm(props) {
             type="checkbox"
             onChange={props.handleChangeSwitcher}
             checked={props.shortMovie}>
-
           </input>
           <span class="slider round"></span>
         </label>
