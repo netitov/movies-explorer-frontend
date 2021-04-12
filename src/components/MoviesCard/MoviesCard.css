@@ -57,6 +57,11 @@
   cursor: pointer;
 }
 
+.moviesCard__img {
+  width: 360px;
+  height: 201px;
+}
+
 @media (max-width: 768px) {
   .moviesCardList {
     grid-row-gap: 47px;

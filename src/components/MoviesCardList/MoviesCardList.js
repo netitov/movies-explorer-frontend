@@ -1,13 +1,29 @@
 import MoviesCard from '../MoviesCard/MoviesCard'
+import Preloader from '../Preloader/Preloader'
 
-function MoviesCardList() {
+function MoviesCardList(props) {
 
   return (
     <main>
-      <ul className="moviesCardList">
-        <MoviesCard />
-      </ul>
-      <button className="moviesCardList__btn link">Ещё</button>
+      {props.inSearch ? <Preloader /> :
+      <>
+            <ul className="moviesCardList">
+            { props.movies.map((movie)=>{
+                return (
+                  <MoviesCard
+                    key={movie._id}
+                    movie={movie}
+                  />
+                )
+              })
+            }
+            </ul>
+            <button className="moviesCardList__btn link">Ещё</button>
+      </>
+
+      }
+
+
     </main>
   )
 }
