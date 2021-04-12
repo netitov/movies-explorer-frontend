@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 //components
 import Main from '../Main/Main';
@@ -15,7 +15,8 @@ import NotFound from '../NotFound/NotFound';
 import * as moviesApi from '../../utils/MoviesApi';
 import ProtectedRoute from '../ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
-import { SHORT_MOVIE_DRT } from '../../utils/config'
+import { SHORT_MOVIE_DRT, MAIN_API } from '../../utils/config';
+import Api from '../../utils/MainApi';
 
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);
+  const [registered, setRegistered] = React.useState(false);
+
+  const history = useHistory();
+  const token = localStorage.getItem('token');
 
 
   React.useEffect(() => {
@@ -39,6 +44,14 @@ function App() {
       console.log(err);
     })
   }, [])
+
+  const api = new Api ({
+    baseUrl: MAIN_API,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+  });
 
 
   function searchMovie(movieName) {
@@ -75,6 +88,22 @@ function App() {
   }
 
 
+  function handleRegister(data) {
+    const {name, email, password} = data;
+    api.register(name, email, password)
+      .then((res) => {
+        if (res) {
+          setRegistered(true);
+          history.push('/signin');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setRegistered(false);
+      })
+  }
+
+
 
 
   return (
@@ -82,6 +111,12 @@ function App() {
     <div className="page">
       <Header />
       <Switch>
+{/*         <Route path="/signin">
+          <Login handleLogin={handleLogin} />
+        </Route> */}
+        <Route path="/signup">
+          <Register onRegister={handleRegister} />
+        </Route>
         <Route exact path="/">
           <Main />
         </Route>
