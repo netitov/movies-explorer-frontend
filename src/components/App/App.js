@@ -27,6 +27,8 @@ function App() {
   const [inSearch, setInSearch] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);
   const [registered, setRegistered] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [email, setEmail] = React.useState('');
 
   const history = useHistory();
   const token = localStorage.getItem('token');
@@ -94,13 +96,27 @@ function App() {
       .then((res) => {
         if (res) {
           setRegistered(true);
-          history.push('/signin');
+          history.push('/movies');
         }
       })
       .catch((err) => {
         console.log(err);
         setRegistered(false);
       })
+  }
+
+  function handleLogin(data) {
+    const {email, password} = data;
+    api.authorize(email, password)
+      .then((res) => {
+        if (res) {
+          setLoggedIn(true);
+          localStorage.setItem('token', res.token);
+          setEmail(email);
+          history.push("/movies");
+        }
+      })
+      .catch((err) => {console.log(err)})
   }
 
 
@@ -111,9 +127,9 @@ function App() {
     <div className="page">
       <Header />
       <Switch>
-{/*         <Route path="/signin">
+        <Route path="/signin">
           <Login handleLogin={handleLogin} />
-        </Route> */}
+        </Route>
         <Route path="/signup">
           <Register onRegister={handleRegister} />
         </Route>
