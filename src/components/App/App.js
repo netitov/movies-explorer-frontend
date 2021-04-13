@@ -17,6 +17,7 @@ import ProtectedRoute from '../ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
 import { SHORT_MOVIE_DRT, MAIN_API } from '../../utils/config';
 import Api from '../../utils/MainApi';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
   const [registered, setRegistered] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [email, setEmail] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [currentUser, setCurrentUser] = React.useState({ });
 
   const history = useHistory();
   const token = localStorage.getItem('token');
@@ -96,6 +99,8 @@ function App() {
       .then((res) => {
         if (res) {
           setRegistered(true);
+          setEmail(email);
+          setName(name);
           history.push('/movies');
         }
       })
@@ -113,11 +118,47 @@ function App() {
           setLoggedIn(true);
           localStorage.setItem('token', res.token);
           setEmail(email);
+          setName(name);
           history.push("/movies");
         }
       })
       .catch((err) => {console.log(err)})
   }
+
+  function tokenCheck() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      api.getContent(token)
+        .then((res) => {
+          if (res) {
+            setLoggedIn(true);
+            history.push("/movies");
+            setEmail(res.email);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+
+  React.useEffect(() => {
+    if (loggedIn) {
+    Promise.all([
+      api.getUserData()
+    ])
+    .then(([userInfo]) => {
+      setCurrentUser(userInfo);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    }
+  }, [loggedIn])
+
+  React.useEffect(() => {
+    tokenCheck();
+  }, []);
 
 
 
@@ -125,6 +166,7 @@ function App() {
   return (
 
     <div className="page">
+      <CurrentUserContext.Provider value={currentUser}>
       <Header />
       <Switch>
         <Route path="/signin">
@@ -133,42 +175,42 @@ function App() {
         <Route path="/signup">
           <Register onRegister={handleRegister} />
         </Route>
+        <ProtectedRoute
+          exact path="/profile"
+          component={Profile}
+          name={name}
+          email={email}
+          loggedIn={loggedIn}
+        />
         <Route exact path="/">
           <Main />
         </Route>
-        <Route exact path="/movies">
-          <Movies
-            movies={movies}
-            searchMovie={searchMovie}
-            handleChangeSwitcher={handleChangeSwitcher}
-            shortMovie={shortMovie}
-            inSearch={inSearch}
-            setPreload={setPreload}
-            foundMovies={foundMovies}
-            noResult={noResult}
-            showNoResult={showNoResult} />
-        </Route>
-        <Route exact path="/saved-movies">
-          <SavedMovies />
-        </Route>
-        <Route exact path="/signup">
-          <Register />
-        </Route>
-        <Route exact path="/signin">
-          <Login />
-        </Route>
-        <Route exact path="/profile">
-          <Profile />
-        </Route>
-        <Route exact path="/pr">
-          <Preloader />
-        </Route>
+        <ProtectedRoute
+          exact path="/movies"
+          component={Movies}
+          loggedIn={loggedIn}
+          movies={movies}
+          searchMovie={searchMovie}
+          handleChangeSwitcher={handleChangeSwitcher}
+          shortMovie={shortMovie}
+          inSearch={inSearch}
+          setPreload={setPreload}
+          foundMovies={foundMovies}
+          noResult={noResult}
+          showNoResult={showNoResult}
+        />
+        <ProtectedRoute
+          exact path="/saved-movies"
+          component={SavedMovies}
+          loggedIn={loggedIn}
+        />
         <Route path="*">
           <NotFound />
         </Route>
 
       </Switch>
       <Footer />
+      </CurrentUserContext.Provider>
     </div>
 
   )
