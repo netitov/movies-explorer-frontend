@@ -3,6 +3,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function Movies(props) {
 
+
   return (
     <div className="movies">
       <SearchForm
@@ -17,6 +18,10 @@ function Movies(props) {
         inSearch={props.inSearch}
         foundMovies={props.foundMovies}
         noResult={props.noResult}
+        onCardLike={props.onCardLike}
+        savedMovies={props.savedMovies}
+        isSaved={props.isSaved}
+        savedFilms={props.savedFilms}
         />
     </div>
   )

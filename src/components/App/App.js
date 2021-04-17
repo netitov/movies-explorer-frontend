@@ -18,12 +18,15 @@ import Preloader from '../Preloader/Preloader';
 import { SHORT_MOVIE_DRT, MAIN_API } from '../../utils/config';
 import Api from '../../utils/MainApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { IMG_URL, IMG_URL_NULL } from '../../utils/config'
 
 
 function App() {
 
   const [movies, setMovies] = React.useState([]);
   const [foundMovies, setFoundMovies] = React.useState([]);
+  const [savedMovies, setSavedMovies] = React.useState([]);
+/*   const [isSaved, setIsSaved] = React.useState(false); */
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);
@@ -36,20 +39,6 @@ function App() {
   const history = useHistory();
   const token = localStorage.getItem('token');
 
-
-  React.useEffect(() => {
-    Promise.all([
-      moviesApi.getInitialMovies()
-    ])
-    .then(([movies]) => {
-      localStorage.setItem("movies", JSON.stringify(movies));
-      setMovies(JSON.parse(localStorage.getItem("movies")));
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }, [])
-
   const api = new Api ({
     baseUrl: MAIN_API,
     headers: {
@@ -57,6 +46,24 @@ function App() {
       'Authorization': `Bearer ${token}`,
     },
   });
+
+  React.useEffect(() => {
+    Promise.all([
+      moviesApi.getInitialMovies(),
+      api.getSavedMovies()
+    ])
+    .then(([movies, savedMovies]) => {
+      localStorage.setItem("movies", JSON.stringify(movies));
+      setMovies(JSON.parse(localStorage.getItem("movies")));
+      localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+      setSavedMovies(JSON.parse(localStorage.getItem("savedMovies")));
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, [])
+
+
 
 
   function searchMovie(movieName) {
@@ -119,7 +126,7 @@ function App() {
           localStorage.setItem('token', res.token);
           setEmail(email);
           setName(name);
-          history.push("/movies");
+          history.push('/movies');
         }
       })
       .catch((err) => {console.log(err)})
@@ -132,7 +139,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            history.push("/movies");
+            history.push('/movies');
             setEmail(res.email);
           }
         })
@@ -161,6 +168,33 @@ function App() {
   }, []);
 
 
+  function handleCardLike(card) {
+
+    const newMovie = {
+      country: card.country,
+      director: card.director,
+      duration: card.duration,
+      year: card.year,
+      description: card.description,
+      image: card.image.url
+      ? `${IMG_URL}${card.image.url}`
+      : IMG_URL_NULL,
+      trailer: card.trailerLink,
+      nameRU: card.nameRU,
+      nameEN: card.nameEN,
+      thumbnail: card.image.formats.thumbnail.url
+      ? `${IMG_URL}${card.image.formats.thumbnail.url}`
+      : IMG_URL_NULL,
+      movieId: card.id }
+
+    api.saveMovie(newMovie)
+      .then((m) => {
+        setSavedMovies([m, ...savedMovies]);
+    })
+      .catch((err) => {
+      console.log(err)
+      })
+  }
 
 
   return (
@@ -198,11 +232,25 @@ function App() {
           foundMovies={foundMovies}
           noResult={noResult}
           showNoResult={showNoResult}
+          onCardLike={handleCardLike}
+          /* isSaved={isSaved} */
+          savedFilms={savedMovies}
         />
         <ProtectedRoute
           exact path="/saved-movies"
           component={SavedMovies}
           loggedIn={loggedIn}
+          movies={movies}
+          searchMovie={searchMovie}
+          handleChangeSwitcher={handleChangeSwitcher}
+          shortMovie={shortMovie}
+          inSearch={inSearch}
+          setPreload={setPreload}
+          foundMovies={foundMovies}
+          noResult={noResult}
+          showNoResult={showNoResult}
+          onCardLike={handleCardLike}
+          savedMovies={savedMovies}
         />
         <Route path="*">
           <NotFound />

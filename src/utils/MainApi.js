@@ -27,22 +27,28 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
-  saveMovie(data) {
+  saveMovie(movie) {
     return fetch(`${this._url}/movies`, {
       method: 'POST',
       headers: this._headers,
-      body: JSON.stringify(data)
+      body: JSON.stringify(movie)
     })
     .then(this._checkServerResponse);
   }
 
-  deleteMovie(movieID) {
-    return fetch(`${this._url}/movies/${movieID}`, {
+  deleteMovie(movie) {
+    return fetch(`${this._url}/movies/${movie}`, {
       method: 'DELETE',
       headers: this._headers
     })
     .then(this._checkServerResponse);
   }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    return isLiked ? this.saveMovie(cardId) : this.deleteMovie(cardId);
+  }
+
+
 
   getUserData() {
     return fetch(`${this._url}/users/me`, {

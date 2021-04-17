@@ -1,13 +1,31 @@
+import React from 'react';
 import { IMG_URL, IMG_URL_NULL } from '../../utils/config'
 
 
-function MoviesCard({ movie }) {
+function MoviesCard({ movie, onCardLike, savedFilms }) {
+
 
   function getTimeFromMins(mins) {
     let hours = Math.trunc(mins/60);
 	  let minutes = mins % 60;
 	  return hours + 'ч ' + minutes + 'м';
   };
+
+  function handleLikeClick() {
+    onCardLike(movie);
+  }
+
+
+  const isSaved = savedFilms.find((m) => m.movieId === movie.id);
+
+  const btnSaveClass = isSaved
+  ? "moviesCard__btn_saved link-btn" : "moviesCard__btn link-btn";
+
+  const btnSign = isSaved ? "" : "Сохранить";
+
+  function handleLikeClick() {
+    onCardLike(movie);
+  }
 
   return (
     <>
@@ -22,7 +40,7 @@ function MoviesCard({ movie }) {
           <p className="moviesCard__duration">{getTimeFromMins(movie.duration)}</p>
         </div>
       </div>
-      <button className="moviesCard__btn link-btn">Сохранить</button>
+      <button className={btnSaveClass} onClick={handleLikeClick}>{btnSign}</button>
     </li>
 
     </>

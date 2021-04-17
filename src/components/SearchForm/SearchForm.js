@@ -33,13 +33,13 @@ function SearchForm(props) {
       </form>
 
       <div className="serachForm__filter">
-        <label class="switch">
+        <label className="switch">
           <input
             type="checkbox"
             onChange={props.handleChangeSwitcher}
             checked={props.shortMovie}>
           </input>
-          <span class="slider round"></span>
+          <span className="slider round"></span>
         </label>
         <p className="serachForm__filter-name">Короткометражки</p>
       </div>

@@ -52,6 +52,22 @@
   padding: 0;
 }
 
+.moviesCard__btn_saved {
+  position: absolute;
+  top: 14px;
+  left: 325px;
+  width: 21px;
+  height: 21px;
+  background-image: url('../../images/save333.svg');
+  transition: opacity 0.3s linear;
+  padding: 0;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+}
+
+
+
 .link-btn:hover {
   opacity: 0.8;
   cursor: pointer;
@@ -71,6 +87,9 @@
     top: 14px;
     left: 253px;
   }
+  .moviesCard__btn_saved {
+    left: 304px;
+  }
 
   .moviesCard__img {
     width: 339px;
@@ -85,6 +104,10 @@
   .moviesCard__btn {
     top: 10px;
     left: 218px;
+  }
+  .moviesCard__btn_saved {
+    left: 269px;
+    top: 10px;
   }
   .moviesCard__img {
     width: 300px;
