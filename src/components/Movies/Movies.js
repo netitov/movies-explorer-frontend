@@ -22,6 +22,7 @@ function Movies(props) {
         savedMovies={props.savedMovies}
         isSaved={props.isSaved}
         savedFilms={props.savedFilms}
+        onCardLikeDelete={props.onCardLikeDelete}
         />
     </div>
   )

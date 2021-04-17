@@ -2,19 +2,13 @@ import React from 'react';
 import { IMG_URL, IMG_URL_NULL } from '../../utils/config'
 
 
-function MoviesCard({ movie, onCardLike, savedFilms }) {
-
+function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete }) {
 
   function getTimeFromMins(mins) {
     let hours = Math.trunc(mins/60);
 	  let minutes = mins % 60;
 	  return hours + 'ч ' + minutes + 'м';
   };
-
-  function handleLikeClick() {
-    onCardLike(movie);
-  }
-
 
   const isSaved = savedFilms.find((m) => m.movieId === movie.id);
 
@@ -24,7 +18,7 @@ function MoviesCard({ movie, onCardLike, savedFilms }) {
   const btnSign = isSaved ? "" : "Сохранить";
 
   function handleLikeClick() {
-    onCardLike(movie);
+    isSaved ? onCardLikeDelete(movie) : onCardLike(movie);
   }
 
   return (

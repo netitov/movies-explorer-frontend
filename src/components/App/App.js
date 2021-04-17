@@ -64,8 +64,6 @@ function App() {
   }, [])
 
 
-
-
   function searchMovie(movieName) {
     if (shortMovie) {
       const fountShortMovies = movies.filter((movie) => {
@@ -196,6 +194,20 @@ function App() {
       })
   }
 
+  function handleDeleteLike(card) {
+
+    const movieForDel = savedMovies.find((m) => m.movieId === card.id);
+
+    api.deleteMovie(movieForDel._id)
+      .then((m) => {
+        const newCards = savedMovies.filter((c) => c.movieId !== card.id);
+        setSavedMovies(newCards);
+    })
+      .catch((err) => {
+      console.log(err)
+      })
+  }
+
 
   return (
 
@@ -235,6 +247,7 @@ function App() {
           onCardLike={handleCardLike}
           /* isSaved={isSaved} */
           savedFilms={savedMovies}
+          onCardLikeDelete={handleDeleteLike}
         />
         <ProtectedRoute
           exact path="/saved-movies"

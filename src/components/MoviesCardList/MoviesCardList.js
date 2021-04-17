@@ -84,6 +84,7 @@ function MoviesCardList(props) {
                     onCardLike={props.onCardLike}
                     isSaved={props.isSaved}
                     savedFilms={props.savedFilms}
+                    onCardLikeDelete={props.onCardLikeDelete}
                   />
                 )
               })
