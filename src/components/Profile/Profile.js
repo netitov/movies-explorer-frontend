@@ -1,19 +1,49 @@
 import { Link } from 'react-router-dom';
 
+import React from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
 function Profile(props) {
+
+  const currentUser = React.useContext(CurrentUserContext);
+  const [data, setData] = React.useState({
+    name: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setData({ ...data, [name]: value });
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.onUpdateUser(data);
+  }
+
+  React.useEffect(() => {
+    setData({
+      name: currentUser.name,
+      email: currentUser.email,
+    });
+  }, [currentUser]);
+
 
   return(
     <div className="profile">
-      <p className="profile__heading auth__heading">{`Привет, ${props.name}!`}</p>
-        <div className="profile__container">
+      <p className="profile__heading auth__heading">{`Привет, ${data.name}!`}</p>
+        <form className="profile__container" onSubmit={handleSubmit} id="form">
           <label className="profile__label profile__text profile__text_bold">Имя</label>
-          <p className="profile__name profile__text">{props.name}</p>
-        </div>
-        <div className="profile__container">
+          <input className="profile__name profile__text" value={data.name}
+            onChange={handleChange} required name="name" id="name" />
+        </form>
+        <form className="profile__container">
           <label className="profile__label profile__text profile__text_bold">E-mail</label>
-          <p className="profile__name profile__text">{props.email}</p>
-        </div>
-        <Link to="/profile" className="profile__btn link">Редактировать</Link>
+          <input className="profile__name profile__text" value={data.email} onChange={handleChange}
+            required name="email" type="email" id="email" />
+        </form>
+        <button className="profile__btn profile__btn-sbt link" type="submit" form="form">Редактировать</button>
         <Link to="/signin" className="profile__btn profile__btn_red link">Выйти из аккаунта</Link>
     </div>
   )

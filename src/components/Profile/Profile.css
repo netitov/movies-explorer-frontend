@@ -28,6 +28,9 @@
   line-height: 13px;
   color: #FFFFFF;
   margin: 0;
+  background: inherit;
+  border: none;
+  text-align: end;
 }
 
 .profile__text_bold {
@@ -40,9 +43,11 @@
   text-decoration: none;
   color: #FFF;
   text-align: center;
+  background: inherit;
+  border: none;
 }
 
-.profile__btn:first-of-type {
+.profile__btn-sbt {
   margin-top: 220px;
   margin-bottom: 16px;
 }
@@ -60,7 +65,7 @@
   .profile__heading {
     margin: 0 auto 96px;
   }
-  .profile__btn {
+  .profile__btn_red {
     padding-bottom: 222px;
   }
 }
@@ -73,13 +78,16 @@
   .profile__heading {
     margin: 0 auto 80px;
   }
-  .profile__btn:first-of-type {
+  .profile__btn-sbt {
     margin-top: 372px;
     margin-bottom: 23px;
   }
   .profile__btn {
     font-size: 12px;
     line-height: 15px;
-    padding-bottom: 30px;
   }
+}
+
+.profile__btn_red {
+  padding-bottom: 30px;
 }

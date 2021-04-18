@@ -233,6 +233,17 @@ function App() {
       })
   }
 
+  function handleUpdateUser(userInfo) {
+    api.saveUserData(userInfo)
+      .then((inputValues)=> {
+        setCurrentUser(inputValues);
+        alert("Данные изменены")
+      })
+      .catch((err) => {
+        console.log(err)
+        })
+  }
+
 
   return (
 
@@ -252,6 +263,7 @@ function App() {
           name={name}
           email={email}
           loggedIn={loggedIn}
+          onUpdateUser={handleUpdateUser}
         />
         <Route exact path="/">
           <Main />
