@@ -44,12 +44,6 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
-  changeLikeCardStatus(cardId, isLiked) {
-    return isLiked ? this.saveMovie(cardId) : this.deleteMovie(cardId);
-  }
-
-
-
   getUserData() {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers

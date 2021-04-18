@@ -27,7 +27,7 @@ function MoviesCardList(props) {
   const [numberMoviesToAdd, setNumberMoviesToAdd] = React.useState(0);
   const [isShowButtonActive, setIsShowButtonActive] = React.useState(false);
 
-  const size = useCurrentSize();
+  /* const size = useCurrentSize();
 
   const countNumberMoviesToRender = () => {
     if (size.width >= SIZE_WIDTH_LARGE) {
@@ -65,7 +65,7 @@ function MoviesCardList(props) {
       setMoviesToRender(props.foundMovies);
       setIsShowButtonActive(false);
     }
-  }, [props.foundMovies, numberMoviesToRender])
+  }, [props.foundMovies, numberMoviesToRender]) */
 
 
   return (
@@ -73,7 +73,8 @@ function MoviesCardList(props) {
       {props.inSearch ? <Preloader /> :
         props.foundMovies.length === 0 && props.noResult ?
           <p className="moviesCardList__noResult">Ничего не найдено</p> :
-          !props.savedMovies ?
+
+          /* !props.savedMovies ? */
       <>
             <ul className="moviesCardList">
             { props.foundMovies.map((movie)=>{
@@ -92,40 +93,33 @@ function MoviesCardList(props) {
             }
             </ul>
             <button className={props.foundMovies.length !== 0 ? "moviesCardList__btn link" :
-              "moviesCardList__btn link moviesCardList__btn_visible_hidden"}
-              onClick={handleShowMoreMoviesButtonClick} >
-              Ещё</button>
+              "moviesCardList__btn link moviesCardList__btn_visible_hidden"} >
+            Ещё</button>
       </>
-          :
+          /* :
       <>
           <ul className="moviesCardList">
-          { props.savedMovies.map((movie)=>{
-              return (
-                <MoviesCard
-                  key={movie.id}
-                  movie={movie}
-                  onCardLike={props.onCardLike}
-                  savedMovies={props.savedMovies}
-
-                />
-              )
-            })
-
-          }
+          { props.foundMovies.map((movie)=>{
+                return (
+                  <MoviesCard
+                    key={movie.id}
+                    movie={movie}
+                    onCardLike={props.onCardLike}
+                    isSaved={props.isSaved}
+                    savedFilms={props.savedFilms}
+                    onCardLikeDelete={props.onCardLikeDelete}
+                  />
+                )
+              })
+            }
           </ul>
           <button className={props.foundMovies.length !== 0 ? "moviesCardList__btn link" :
             "moviesCardList__btn link moviesCardList__btn_visible_hidden"}
-            onClick={handleShowMoreMoviesButtonClick} >
-            Ещё</button>
-      </>
-
-
-
-
-
+          >
+          Ещё</button>
+      </> */
 
       }
-
     </main>
   )
 }

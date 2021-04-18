@@ -82,6 +82,31 @@ function App() {
     }
   }
 
+  function searchSavedMovie(movieName) {
+
+    const filteredArray  = movies.filter(function(array_el){
+       return savedMovies.find(function(anotherOne_el){
+          return anotherOne_el.movieId == array_el.id;
+       })
+    });
+
+    if (shortMovie) {
+      const fountShortMovies = filteredArray.filter((movie) => {
+        return (
+          movie.duration <= SHORT_MOVIE_DRT &&
+          movie.nameRU.toLowerCase().includes(movieName.toLowerCase())
+          )
+      });
+      setFoundMovies(fountShortMovies)
+    }
+    else {
+      const foundMovies = filteredArray.filter((movie) => {
+        return movie.nameRU.toLowerCase().includes(movieName.toLowerCase());
+      });
+      return setFoundMovies(foundMovies)
+    }
+  }
+
   function handleChangeSwitcher() {
     setShortMovie(!shortMovie);
   }
@@ -245,7 +270,6 @@ function App() {
           noResult={noResult}
           showNoResult={showNoResult}
           onCardLike={handleCardLike}
-          /* isSaved={isSaved} */
           savedFilms={savedMovies}
           onCardLikeDelete={handleDeleteLike}
         />
@@ -254,7 +278,7 @@ function App() {
           component={SavedMovies}
           loggedIn={loggedIn}
           movies={movies}
-          searchMovie={searchMovie}
+          searchMovie={searchSavedMovie}
           handleChangeSwitcher={handleChangeSwitcher}
           shortMovie={shortMovie}
           inSearch={inSearch}
@@ -263,7 +287,8 @@ function App() {
           noResult={noResult}
           showNoResult={showNoResult}
           onCardLike={handleCardLike}
-          savedMovies={savedMovies}
+          savedFilms={savedMovies}
+          onCardLikeDelete={handleDeleteLike}
         />
         <Route path="*">
           <NotFound />
