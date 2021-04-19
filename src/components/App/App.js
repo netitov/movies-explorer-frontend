@@ -26,7 +26,6 @@ function App() {
   const [movies, setMovies] = React.useState([]);
   const [foundMovies, setFoundMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
-/*   const [isSaved, setIsSaved] = React.useState(false); */
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);

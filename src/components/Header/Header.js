@@ -1,11 +1,11 @@
 import { Link, Route } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
-function Header() {
+function Header(props) {
 
   return (
     <>
-    <Route exact path="/">
+      <Route exact path="/">
       <header className="header">
         <div className="header__container">
           <Link to="/">
@@ -28,6 +28,8 @@ function Header() {
         </div>
       </header>
     </Route>
+
+
 
     <Route exact path={['/saved-movies', '/movies', '/profile']}>
       <header className="header">
@@ -87,9 +89,6 @@ function Header() {
         </div>
       </header>
     </Route>
-
-
-
 
 
     </>

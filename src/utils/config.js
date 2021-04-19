@@ -14,6 +14,6 @@ export const MOVIES_ADD_MAX = 3;
 
 export const SCR_WIDTH_MAX = 1280;
 export const SCR_WIDTH_MID = 768;
-export const SCR_WIDTH_MIN = 320;
+export const SCR_WIDTH_MIN = 480;
 
 

@@ -39,7 +39,7 @@
 
 @media (max-width: 845px) {
   .moviesCardList {
-    width: 92vw;
+    width: 93vw;
     grid-row-gap: 47px;
     grid-template-columns: repeat(auto-fit, minmax(339px, auto));
   }
