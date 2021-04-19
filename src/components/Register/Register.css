@@ -79,6 +79,15 @@
   color: #8B8B8B;
 }
 
+.auth__btn_inactive {
+  color: #565454;
+  background-color: #848383;
+}
+
+.auth__btn_inactive:hover {
+  cursor:  not-allowed;
+}
+
 @media (max-width: 768px) {
   .auth {
     padding: 232px 0 232px;
