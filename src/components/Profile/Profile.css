@@ -57,6 +57,24 @@
   color: #EE3465;
 }
 
+.profile__btn_inactive {
+  color: grey;
+}
+
+.profile__btn_inactive:hover {
+  cursor:  not-allowed;
+}
+
+.profile__error {
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+}
+
+.profile__error-name {
+  margin: -11px 0px 10px;
+}
+
 @media (max-width: 768px) {
   .profile {
     padding-top: 236px;

@@ -237,11 +237,17 @@ function App() {
     api.saveUserData(userInfo)
       .then((inputValues)=> {
         setCurrentUser(inputValues);
-        alert("Данные изменены")
+        alert('Данные изменены')
       })
       .catch((err) => {
         console.log(err)
         })
+  }
+
+  function handleSignOut() {
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+    history.push('/');
   }
 
 
@@ -264,6 +270,7 @@ function App() {
           email={email}
           loggedIn={loggedIn}
           onUpdateUser={handleUpdateUser}
+          onSignOut={handleSignOut}
         />
         <Route exact path="/">
           <Main />
