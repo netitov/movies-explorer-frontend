@@ -2,7 +2,6 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 
-//components
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
@@ -14,7 +13,6 @@ import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
 import * as moviesApi from '../../utils/MoviesApi';
 import ProtectedRoute from '../ProtectedRoute';
-import Preloader from '../Preloader/Preloader';
 import { SHORT_MOVIE_DRT, MAIN_API } from '../../utils/config';
 import Api from '../../utils/MainApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
@@ -254,7 +252,8 @@ function App() {
 
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-      <Header />
+      <Header
+        loggedIn={loggedIn} />
       <Switch>
         <Route path="/signin">
           <Login handleLogin={handleLogin} />

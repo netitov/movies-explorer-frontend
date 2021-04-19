@@ -5,33 +5,7 @@ function Header(props) {
 
   return (
     <>
-      <Route exact path="/">
-      <header className="header">
-        <div className="header__container">
-          <Link to="/">
-            <img className="header__logo link" src={logoPath} alt="Лого Movies-explorer"/>
-          </Link>
-          <div className="header__nav-container">
-            <nav className="header__nav">
-              <ul className="header__nav-ul">
-                <Link className="header__nav-list header__nav-list_bold  link" to="/signup">
-                  <li>Регистрация</li>
-                </Link>
-              </ul>
-            </nav>
-            <Link className="header__link link" to="/signin">
-              <div className="header__account-btn_enter">
-                <p className="header__btn">Войти</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </header>
-    </Route>
-
-
-
-    <Route exact path={['/saved-movies', '/movies', '/profile']}>
+    {props.loggedIn ?
       <header className="header">
         <div className="header__container">
           <Link to="/">
@@ -81,15 +55,33 @@ function Header(props) {
                 </li>
               </Link>
             </ul>
-
-
           </div>
-
-
         </div>
-      </header>
-    </Route>
+      </header> :
 
+          <header className="header">
+            <div className="header__container">
+              <Link to="/">
+                <img className="header__logo link" src={logoPath} alt="Лого Movies-explorer"/>
+              </Link>
+              <div className="header__nav-container">
+                <nav className="header__nav">
+                  <ul className="header__nav-ul">
+                    <Link className="header__nav-list header__nav-list_bold  link" to="/signup">
+                      <li>Регистрация</li>
+                    </Link>
+                  </ul>
+                </nav>
+                <Link className="header__link link" to="/signin">
+                  <div className="header__account-btn_enter">
+                    <p className="header__btn">Войти</p>
+                  </div>
+                </Link>
+              </div>
+
+            </div>
+          </header>
+          }
 
     </>
   )
