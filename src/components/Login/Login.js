@@ -35,7 +35,7 @@ function Login(props) {
       <p className="auth__heading">Рады видеть!</p>
       <form className="auth__form" onSubmit={handleSubmit}>
         <label className="auth__label">E-mail
-          <input id="username" className="auth__input" required name="email" type="email"
+          <input id="email" className="auth__input" required name="email" type="email"
             value={data.email} onChange={handleChange} />
         </label>
         <p className="profile__error profile__error-name">{error.email}</p>

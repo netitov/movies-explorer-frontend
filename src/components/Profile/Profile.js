@@ -32,8 +32,8 @@ function Profile(props) {
 
   React.useEffect(() => {
     setData({
-      name: currentUser.name,
-      email: currentUser.email,
+      name: currentUser.name || "",
+      email: currentUser.email || "",
     });
   }, [currentUser]);
 

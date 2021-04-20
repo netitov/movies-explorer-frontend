@@ -27,11 +27,12 @@ function App() {
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);
-  const [registered, setRegistered] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [email, setEmail] = React.useState('');
-  const [name, setName] = React.useState('');
   const [currentUser, setCurrentUser] = React.useState({ });
+  const [userData, setUserData] = React.useState({
+    name: "",
+    email: "",
+  });
 
   const history = useHistory();
   const token = localStorage.getItem('token');
@@ -121,31 +122,28 @@ function App() {
 
 
   function handleRegister(data) {
-    const {name, email, password} = data;
+    const { name, email, password } = data;
     api.register(name, email, password)
       .then((res) => {
         if (res) {
-          setRegistered(true);
-          setEmail(email);
-          setName(name);
+          handleLogin({ email, password });
+          setCurrentUser(res);
           history.push('/movies');
         }
       })
       .catch((err) => {
         console.log(err);
-        setRegistered(false);
+        setLoggedIn(false);
       })
   }
 
   function handleLogin(data) {
-    const {email, password} = data;
+    const { email, password } = data;
     api.authorize(email, password)
       .then((res) => {
         if (res) {
-          setLoggedIn(true);
           localStorage.setItem('token', res.token);
-          setEmail(email);
-          setName(name);
+          setLoggedIn(true);
           history.push('/movies');
         }
       })
@@ -160,7 +158,11 @@ function App() {
           if (res) {
             setLoggedIn(true);
             history.push('/movies');
-            setEmail(res.email);
+            const data = {
+              name: res.name,
+              email: res.email,
+            };
+            setUserData(data)
           }
         })
         .catch((err) => {
@@ -264,8 +266,6 @@ function App() {
         <ProtectedRoute
           exact path="/profile"
           component={Profile}
-          name={name}
-          email={email}
           loggedIn={loggedIn}
           onUpdateUser={handleUpdateUser}
           onSignOut={handleSignOut}

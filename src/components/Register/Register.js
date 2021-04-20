@@ -36,12 +36,12 @@ function Register(props) {
       <p className="auth__heading">Добро пожаловать!</p>
       <form className="auth__form" onSubmit={handleSubmit} >
         <label className="auth__label">Имя
-          <input id="name" className="auth__input" required name="name" type="string" onChange={handleChange}
+          <input id="name" className="auth__input" required name="name" type="text" onChange={handleChange}
              value={data.name} minLength="2" maxLength="30" />
         </label>
         <p className="profile__error profile__error-name">{error.name}</p>
         <label className="auth__label">E-mail
-          <input id="username" className="auth__input" required name="email" type="email" onChange={handleChange}
+          <input id="email" className="auth__input" required name="email" type="email" onChange={handleChange}
              value={data.email} />
         </label>
         <p className="profile__error profile__error-name">{error.email}</p>
