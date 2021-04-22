@@ -23,6 +23,7 @@ function App() {
 
   const [movies, setMovies] = React.useState([]);
   const [foundMovies, setFoundMovies] = React.useState([]);
+  const [foundSavedMovies, setFoundSavedMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
@@ -95,13 +96,13 @@ function App() {
           movie.nameRU.toLowerCase().includes(movieName.toLowerCase())
           )
       });
-      setFoundMovies(fountShortMovies)
+      setFoundSavedMovies(fountShortMovies) /* setFoundMovies */
     }
     else {
       const foundMovies = filteredArray.filter((movie) => {
         return movie.nameRU.toLowerCase().includes(movieName.toLowerCase());
       });
-      return setFoundMovies(foundMovies)
+      return setFoundSavedMovies(foundMovies) /* setFoundMovies */
     }
   }
 
@@ -225,7 +226,10 @@ function App() {
     api.deleteMovie(movieForDel._id)
       .then((m) => {
         const newCards = savedMovies.filter((c) => c.movieId !== card.id);
+        const newFilteredCard = foundSavedMovies.filter((c) => c.id !== card.id);
+
         setSavedMovies(newCards);
+        setFoundSavedMovies(newFilteredCard);
     })
       .catch((err) => {
       console.log(err)
@@ -300,7 +304,7 @@ function App() {
           shortMovie={shortMovie}
           inSearch={inSearch}
           setPreload={setPreload}
-          foundMovies={foundMovies}
+          foundMovies={foundSavedMovies}/* foundMovies */
           noResult={noResult}
           showNoResult={showNoResult}
           onCardLike={handleCardLike}
