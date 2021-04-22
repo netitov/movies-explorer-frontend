@@ -66,6 +66,10 @@
   border: none;
 }
 
+.moviesCard__btn_delete {
+  background-image: url('../../images/d3.svg');
+}
+
 
 
 .link-btn:hover {

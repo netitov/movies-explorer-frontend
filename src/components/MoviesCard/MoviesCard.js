@@ -2,7 +2,7 @@ import React from 'react';
 import { IMG_URL, IMG_URL_NULL } from '../../utils/config'
 
 
-function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete }) {
+function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete, inSaved }) {
 
   function getTimeFromMins(mins) {
     let hours = Math.trunc(mins/60);
@@ -12,8 +12,11 @@ function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete }) {
 
   const isSaved = savedFilms.find((m) => m.movieId === movie.id);
 
-  const btnSaveClass = isSaved
-  ? "moviesCard__btn_saved link-btn" : "moviesCard__btn link-btn";
+  const btnSaveClass = isSaved && !inSaved
+  ? "moviesCard__btn_saved link-btn" :
+  isSaved && inSaved
+  ? "moviesCard__btn_saved link-btn moviesCard__btn_delete"
+  : "moviesCard__btn link-btn";
 
   const btnSign = isSaved ? "" : "Сохранить";
 

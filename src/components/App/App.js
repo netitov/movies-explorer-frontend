@@ -27,6 +27,7 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [shortMovie, setShortMovie] = React.useState(false);
   const [inSearch, setInSearch] = React.useState(false);
+  const [inSaved, setInSaved] = React.useState(false);
   const [noResult, setNoResult] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({ });
@@ -34,6 +35,7 @@ function App() {
     name: "",
     email: "",
   });
+
 
   const history = useHistory();
   const token = localStorage.getItem('token');
@@ -97,12 +99,13 @@ function App() {
           )
       });
       setFoundSavedMovies(fountShortMovies) /* setFoundMovies */
+      setInSaved(true);
     }
     else {
       const foundMovies = filteredArray.filter((movie) => {
         return movie.nameRU.toLowerCase().includes(movieName.toLowerCase());
       });
-      return setFoundSavedMovies(foundMovies) /* setFoundMovies */
+      /* return */ setFoundSavedMovies(foundMovies); setInSaved(true);  /* setFoundMovies */
     }
   }
 
@@ -310,6 +313,7 @@ function App() {
           onCardLike={handleCardLike}
           savedFilms={savedMovies}
           onCardLikeDelete={handleDeleteLike}
+          inSaved={inSaved}
         />
         <Route path="*">
           <NotFound />
