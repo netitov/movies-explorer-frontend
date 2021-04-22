@@ -25,8 +25,6 @@ function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete, inSaved }
   }
 
   return (
-    <>
-
     <li className="moviesCard">
       <img className="moviesCard__img" alt={`Изображение ${movie.nameRU}`}
         src={movie.image == null ? IMG_URL_NULL : `${IMG_URL}${movie.image.url}`}>
@@ -39,8 +37,6 @@ function MoviesCard({ movie, onCardLike, savedFilms, onCardLikeDelete, inSaved }
       </div>
       <button className={btnSaveClass} onClick={handleLikeClick}>{btnSign}</button>
     </li>
-
-    </>
   )
 }
 
