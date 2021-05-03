@@ -2,13 +2,19 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notFound__container {
+
 }
 
 .notFound__heading {
   font-size: 140px;
   line-height: 169px;
   font-weight: normal;
-  padding-top: 246px;
+  /* padding-top: 246px; */
   margin: 0 auto 5px;
 }
 
@@ -16,6 +22,7 @@
   font-size: 16px;
   line-height: 19px;
   margin: 0 auto 184px;
+  text-align: center;
 }
 
 .notFound__btn {
@@ -26,15 +33,15 @@
   color: #4285F4;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .notFound__heading {
     padding-top: 408px;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .notFound__heading {
-    padding-top: 329px;
+    /* padding-top: 329px; */
     font-size: 80px;
     line-height: 97px;
     margin-bottom: 10px;

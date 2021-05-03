@@ -36,7 +36,6 @@ function App() {
     email: "",
   });
 
-
   const history = useHistory();
   const token = localStorage.getItem('token');
 
@@ -192,6 +191,8 @@ function App() {
   React.useEffect(() => {
     tokenCheck();
   }, []);
+
+
 
 
   function handleCardLike(card) {

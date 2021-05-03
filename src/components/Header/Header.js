@@ -1,13 +1,21 @@
-import { Link, Route } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
 function Header(props) {
+
+ //hiding header in 404 page
+ const route = useLocation().pathname;
+ const headerClass = route === "/signin" || route === "/signup" || route === "/profile" || route === "/movies"
+  || route === "/saved-movies" || route === "/"
+  ? "header__container"
+  : "header__container_display_none"
+
 
   return (
     <>
     {props.loggedIn ?
       <header className="header">
-        <div className="header__container">
+        <div className={headerClass}>
           <Link to="/">
             <img className="header__logo link" src={logoPath} alt="Лого Movies-explorer"/>
           </Link>
@@ -60,7 +68,7 @@ function Header(props) {
       </header> :
 
           <header className="header">
-            <div className="header__container">
+            <div className={headerClass}>
               <Link to="/">
                 <img className="header__logo link" src={logoPath} alt="Лого Movies-explorer"/>
               </Link>

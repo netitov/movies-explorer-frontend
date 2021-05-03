@@ -98,6 +98,10 @@
   display: none;
 }
 
+.header__container_display_none {
+  display: none;
+}
+
 
 @media (max-width: 768px) {
   .header__container {
@@ -227,6 +231,7 @@
   }
 
 }
+
 
 @media (max-width: 480px) {
   .header__nav-list {
