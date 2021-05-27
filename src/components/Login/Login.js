@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
 function Login(props) {
@@ -53,4 +53,4 @@ function Login(props) {
   )
 }
 
-export default Login;
+export default withRouter(Login);

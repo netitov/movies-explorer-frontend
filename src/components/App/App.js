@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory, withRouter, useLocation } from 'react-router-dom';
 
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -37,6 +37,7 @@ function App() {
   });
 
   const history = useHistory();
+  const locationPath = useLocation();
   const token = localStorage.getItem('token');
 
   const api = new Api ({
@@ -160,7 +161,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            history.push('/movies');
+            history.push(locationPath);
             const data = {
               name: res.name,
               email: res.email,
@@ -191,8 +192,6 @@ function App() {
   React.useEffect(() => {
     tokenCheck();
   }, []);
-
-
 
 
   function handleCardLike(card) {
@@ -328,4 +327,4 @@ function App() {
   )
 }
 
-export default App;
+export default withRouter(App);

@@ -1,5 +1,6 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import { withRouter } from 'react-router-dom';
 
 function SavedMovies(props) {
 
@@ -28,4 +29,4 @@ function SavedMovies(props) {
   )
 }
 
-export default SavedMovies;
+export default withRouter(SavedMovies);

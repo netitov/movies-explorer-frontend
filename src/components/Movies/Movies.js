@@ -1,5 +1,6 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import { withRouter } from 'react-router-dom';
 
 function Movies(props) {
 
@@ -28,4 +29,4 @@ function Movies(props) {
   )
 }
 
-export default Movies;
+export default withRouter(Movies);
