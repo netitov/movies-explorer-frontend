@@ -13,6 +13,7 @@ import { MOVIES_API } from './config'
         "Accept": "application/json",
         "Content-Type": "application/json",
       },
+
     })
     .then(checkServerResponse);
   }

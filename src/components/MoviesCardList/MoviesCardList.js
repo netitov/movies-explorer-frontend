@@ -42,7 +42,7 @@ function MoviesCardList(props) {
     }
   }, [windowWidth]);
 
-  const leftMovies = props.foundMovies.length - initialMovies
+  const leftMovies = props.foundMovies.length - initialMovies;
 
 
   return (

@@ -56,14 +56,27 @@ function App() {
     .then(([movies, savedMovies]) => {
       localStorage.setItem("movies", JSON.stringify(movies));
       setMovies(JSON.parse(localStorage.getItem("movies")));
+      setFoundMovies(JSON.parse(localStorage.getItem("movies")));//test
       localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
       setSavedMovies(JSON.parse(localStorage.getItem("savedMovies")));
+      const filteredArray = movies.filter(function(array_el){
+        return savedMovies.find(function(anotherOne_el){
+           return anotherOne_el.movieId == array_el.id;
+        })
+      });
+      setFoundSavedMovies(filteredArray);//test
+      console.log(filteredArray)
     })
     .catch((err) => {
       console.log(err);
     })
   }, [])
 
+  const filteredArray = movies.filter(function(array_el){
+    return savedMovies.find(function(anotherOne_el){
+       return anotherOne_el.movieId == array_el.id;
+    })
+  });
 
   function searchMovie(movieName) {
     if (shortMovie) {
@@ -85,7 +98,7 @@ function App() {
 
   function searchSavedMovie(movieName) {
 
-    const filteredArray  = movies.filter(function(array_el){
+    const filteredArray = movies.filter(function(array_el){
        return savedMovies.find(function(anotherOne_el){
           return anotherOne_el.movieId == array_el.id;
        })
@@ -216,6 +229,8 @@ function App() {
     api.saveMovie(newMovie)
       .then((m) => {
         setSavedMovies([m, ...savedMovies]);
+        const filteredMovie = {...movies.filter(m => m.id == newMovie.movieId)}[0];
+        setFoundSavedMovies([filteredMovie, ...foundSavedMovies]);
     })
       .catch((err) => {
       console.log(err)

@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+
 function Header(props) {
 
  //hiding header in 404 page
@@ -38,7 +40,7 @@ function Header(props) {
             </Link>
           </div>
 
-          <div className="hamburger-menu">
+          {/* <div className="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label className="menu__btn link" for="menu__toggle">
               <span></span>
@@ -63,7 +65,10 @@ function Header(props) {
                 </li>
               </Link>
             </ul>
-          </div>
+          </div> */}
+          <HamburgerMenu />
+
+
         </div>
       </header> :
 
