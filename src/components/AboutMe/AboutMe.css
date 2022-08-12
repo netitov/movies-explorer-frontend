@@ -67,8 +67,7 @@
 }
 
 .aboutMe__pic {
-  max-width: 228px;
-  max-height: 325px;
+  display: none;
 }
 
 @media (max-width: 768px) {
