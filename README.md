@@ -2,8 +2,8 @@
 
 Учебный проект
 
-Ссылка на сервис: <http://movies.netitov.ru>  
-API: <http://api.movies.netitov.ru>
+Ссылка на сервис: <https://movies.netitov.ru>
+API: <https://api.movies.netitov.ru>
 
 ## Суть и содержание проекта
 
